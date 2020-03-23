@@ -9,7 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+
 @Entity(name = "order_history")
+@Data
 public class Order {
 
 	@Id
@@ -34,60 +37,6 @@ public class Order {
 	@Column(nullable = false)
 	private BigDecimal currentPrice;
 
-	public BigDecimal getCurrentPrice() {
-		return currentPrice;
-	}
 
-	public void setCurrentPrice(BigDecimal currentPrice) {
-		this.currentPrice = currentPrice;
-	}
-
-	public Timestamp getDate() {
-		return date;
-	}
-
-	public void setDate(Timestamp date) {
-		this.date = date;
-	}
-
-	public Long getID() {
-		return ID;
-	}
-
-	public void setID(Long iD) {
-		ID = iD;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getStockName() {
-		return stockName;
-	}
-
-	public void setStockName(String stockName) {
-		this.stockName = stockName;
-	}
-
-	public String getBuyOrSell() {
-		return buyOrSell;
-	}
-
-	public void setBuyOrSell(String buyOrSell) {
-		this.buyOrSell = buyOrSell;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
 
 }

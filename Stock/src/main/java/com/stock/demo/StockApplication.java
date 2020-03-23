@@ -89,8 +89,8 @@ public class StockApplication implements CommandLineRunner {
 
 			var stockHistory = new StockHistory();
 			stockHistory.setStockName(stockname);
-			stockHistory.setGain(BigDecimal.valueOf(diff));
-			stockHistory.setCurrentPrice(BigDecimal.valueOf(newPrice));
+			stockHistory.setGain(diff);
+			stockHistory.setCurrentPrice(newPrice);
 			stockHistory.setTimestamp(new Timestamp(new Date().getTime()));
 			stockHistoryRepo.save(stockHistory);
 

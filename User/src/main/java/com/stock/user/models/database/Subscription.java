@@ -6,7 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+
 @Entity(name = "subscription")
+@Data
 public class Subscription {
 
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,45 +28,4 @@ public class Subscription {
 	@Column(nullable = false)
 	private Double maxPrice;
 	
-
-	public Long getID() {
-		return ID;
-	}
-
-	public void setID(Long iD) {
-		ID = iD;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getStockname() {
-		return stockname;
-	}
-
-	public void setStockname(String stockname) {
-		this.stockname = stockname;
-	}
-
-	public Double getMinPrice() {
-		return minPrice;
-	}
-
-	public void setMinPrice(Double minPrice) {
-		this.minPrice = minPrice;
-	}
-
-	public Double getMaxPrice() {
-		return maxPrice;
-	}
-
-	public void setMaxPrice(Double maxPrice) {
-		this.maxPrice = maxPrice;
-	}
-
 }

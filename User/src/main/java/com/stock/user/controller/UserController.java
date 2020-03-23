@@ -41,7 +41,7 @@ public class UserController {
 	@PostMapping("/deposit")
 	private String depositValue(@RequestBody Deposit deposit) {
 
-		User user = userRepo.findByUsername(deposit.getusername());
+		User user = userRepo.findByUsername(deposit.getUsername());
 		double currBalance = user.getBalance().doubleValue();
 		currBalance += deposit.getDeposit();
 		user.setBalance(BigDecimal.valueOf(currBalance));

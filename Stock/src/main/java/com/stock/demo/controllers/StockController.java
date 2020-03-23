@@ -22,7 +22,6 @@ import com.stock.demo.models.db.Stock;
 import com.stock.demo.models.db.StockHistory;
 import com.stock.demo.models.web.ExecutedOrder;
 import com.stock.demo.models.web.OrderDetails;
-import com.stock.demo.models.web.StockHistoryweb;
 import com.stock.demo.models.web.UserOrder;
 
 @RestController
@@ -48,11 +47,11 @@ public class StockController {
 	}
 
 	@GetMapping("/stock/{stockname}/history")
-	private List<StockHistoryweb> history(@PathVariable("stockname") String stockName) {
+	private List<StockHistory> history(@PathVariable("stockname") String stockName) {
 		List<StockHistory> stockHistory = stockHistoryRepo.findByStockName(stockName);
-		List<StockHistoryweb> response = new ArrayList<>();
+		List<StockHistory> response = new ArrayList<>();
 		for (StockHistory sh : stockHistory) {
-			StockHistoryweb sw = new StockHistoryweb();
+			StockHistory sw = new StockHistory();
 			sw.setStockName(sh.getStockName());
 			sw.setCurrentPrice(sh.getCurrentPrice().doubleValue());
 			sw.setTimestamp(sh.getTimestamp());
